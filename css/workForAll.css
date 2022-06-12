@@ -1,4 +1,5 @@
 /*注入 CSS 样式*/
 div {
-    border: 1px solid gray;
+    /*这里演示给 div 表情添加边框：*/
+    /*border: 1px solid gray;*/
 }
