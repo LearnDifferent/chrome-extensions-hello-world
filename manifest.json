@@ -14,5 +14,13 @@
   },
   "permissions": [
     "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/workForAll.js"],
+      "css": ["css/workForAll.css"],
+      "run_at": "document_end"
+    }
   ]
 }
