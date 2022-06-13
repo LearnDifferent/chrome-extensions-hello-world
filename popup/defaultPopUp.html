@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Pop up demo</title>
-    <!-- 不能直接使用 js，所以要引用外部的 js： -->
-<!--    <script src="../js/defaultPopUp.js"></script>-->
     <!-- 使用 zui 控制样式；官网：https://www.openzui.com/ -->
     <script src="../css/zui.min.css"></script>
 </head>
 <body>
     hello
-    <button class="btn btn-primary">按钮1</button>
-    <button class="btn btn-success">按钮2</button>
+    <button class="btn btn-primary" id="sendToBg">发送消息到 background</button>
+    <!-- 注意，如果 js 里面要用到前面的元素，必须把 js 放到元素的后面 -->
+    <script src="../js/defaultPopUp.js"></script>
 </body>
 </html>

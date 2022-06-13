@@ -10,10 +10,10 @@
     "128": "icons/128.png"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js", "listen.js"]
   },
   "permissions": [
-    "contextMenus"
+    "contextMenus", "notifications"
   ],
   "content_scripts": [
     {
