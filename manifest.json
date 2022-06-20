@@ -10,7 +10,8 @@
     "128": "icons/128.png"
   },
   "background": {
-    "scripts": ["background.js", "listen.js"]
+    "scripts": ["background.js", "listen.js"],
+    "persistent": true
   },
   "permissions": [
     "contextMenus", "notifications"
