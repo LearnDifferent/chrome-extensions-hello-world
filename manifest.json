@@ -26,7 +26,7 @@
     {
       "matches": ["<all_urls>"],
       "exclude_matches": ["https://*.youtube.com/watch*"],
-      "js": ["js/content.js"],
+      "js": ["js/sendMessage.js"],
       "run_at": "document_end"
     }
   ],
