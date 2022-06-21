@@ -22,6 +22,12 @@
       "js": ["js/workForAll.js"],
       "css": ["css/workForAll.css"],
       "run_at": "document_end"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "exclude_matches": ["https://*.youtube.com/watch*"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
     }
   ],
   "browser_action": {
