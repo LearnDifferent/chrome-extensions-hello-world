@@ -16,6 +16,11 @@
   "permissions": [
     "contextMenus", "notifications", "tabs", "bookmarks"
   ],
+  "web_accessible_resources": [
+    "inject-js/inject.js",
+    "inject-js/inject0.js",
+    "inject-js/inject1.js"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
