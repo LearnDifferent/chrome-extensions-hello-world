@@ -10,7 +10,11 @@
     "128": "icons/128.png"
   },
   "background": {
-    "scripts": ["background.js", "listen.js"],
+    "scripts": [
+      "background.js",
+      "listen.js",
+      "message-passing-background.js"
+    ],
     "persistent": true
   },
   "permissions": [
@@ -25,6 +29,16 @@
     {
       "matches": ["https://www.baidu.com/"],
       "js": ["js/storage-test.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://www.baidu.com/"],
+      "js": ["message-passing/create-button.js", "message-passing/baidu-demo.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://www.sogou.com/"],
+      "js": ["message-passing/create-button.js", "message-passing/sogou-demo.js"],
       "run_at": "document_end"
     },
     {

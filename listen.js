@@ -2,7 +2,9 @@
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     console.log("message 表示发送到这里到消息：" + message);
     console.log("sender 表示发送者：" + sender);
-    console.log("response 表示会执行回调函数，并将结果返回到 content script 中" + sendResponse());
+    // 当有多个 background scripts 使用 chrome.runtime.onMessage.addListener 时，
+    // 只有其中一个的 sendResponse() 方法会被执行，所以这里注释这个：
+    // console.log("response 表示会执行回调函数，并将结果返回到 content script 中" + sendResponse());
 })
 
 // Query tab
