@@ -14,7 +14,7 @@
     "persistent": true
   },
   "permissions": [
-    "contextMenus", "notifications", "tabs", "bookmarks"
+    "contextMenus", "notifications", "tabs", "bookmarks", "storage"
   ],
   "web_accessible_resources": [
     "inject-js/inject.js",
@@ -22,6 +22,11 @@
     "inject-js/inject1.js"
   ],
   "content_scripts": [
+    {
+      "matches": ["https://www.baidu.com/"],
+      "js": ["js/storage-test.js"],
+      "run_at": "document_end"
+    },
     {
       "matches": ["<all_urls>"],
       "js": ["js/for-every-frame.js"],
