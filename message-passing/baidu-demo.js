@@ -20,3 +20,15 @@ window.onload = sendIdAndGetAnotherId();
 BAIDU_BTN.onclick = () => {
     sendIdAndGetAnotherId();
 }
+
+/**
+ * 监听发送到此页面的消息
+ */
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    // 如果有修改 button 的 innerText 的请求，就修改该 button 的 innerText
+    let btnInnerText = message.baiduButtonInnerText;
+    if (btnInnerText) {
+        BAIDU_BTN.innerText = btnInnerText;
+        sendResponse(sender.tab.id + " - 修改了按钮")
+    }
+});

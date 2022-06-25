@@ -54,7 +54,7 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["<all_urls>"],
+      "matches": ["http://nba.hupu.com/"],
       "exclude_matches": ["https://*.youtube.com/watch*"],
       "js": ["js/sendAndGetMessage.js"],
       "run_at": "document_end"
