@@ -61,3 +61,14 @@ chrome.contextMenus.create({
     documentUrlPatterns: ["https://www.baidu.com/*", "https://www.apple.com.cn/*"],
 }, function () {
 });
+
+// 监听右键菜单的点击事件
+// 参数 1：被单击的“右键菜单”对象的数据
+// 参数 2：当前标签页的信息
+chrome.contextMenus.onClicked.addListener((onClickData, tab) => {
+    console.log("=================");
+    console.log("---onClickData---");
+    console.log(onClickData);
+    console.log("-------tab-------");
+    console.log(tab);
+});
