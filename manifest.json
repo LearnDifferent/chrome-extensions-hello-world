@@ -27,6 +27,12 @@
   ],
   "content_scripts": [
     {
+      "matches": ["https://www.apple.com.cn/*"],
+      "js": ["get-element-js/get-element.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    },
+    {
       "matches": ["https://www.baidu.com/"],
       "js": ["js/storage-test.js"],
       "run_at": "document_end"

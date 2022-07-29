@@ -9,11 +9,13 @@ chrome.contextMenus.create({
     id: "id1",
     // 右键菜单的作用范围
     contexts: ["all", "selection", "link"],
-    // 单击事件
-    onclick: function (onClickData) {
-        // 这里的参数 onClickData 表示被单击的“右键菜单”对象的数据
-        // 注意，这个是在「背景页」里面才看得到输出
-        console.log(onClickData);
+    // onclick 属性
+    onclick: function (info, tab) {
+        console.log("====注意，这个是在「背景页」里面才看得到输出====");
+        console.log("----这里的参数 info 表示被单击的“右键菜单”对象的数据----");
+        console.log(info);
+        console.log("----当前标签页的信息----");
+        console.log(tab);
     }
 }, function () {
     console.log("创建右键菜单");
@@ -52,23 +54,22 @@ chrome.contextMenus.create({
 });
 
 // 只在某些页面才会显示的右键菜单按钮
+let onlyParticularId = "id2";
 chrome.contextMenus.create({
     type: "normal",
     title: "Only be shown in some websites",
-    id: "id2",
+    id: onlyParticularId,
     contexts: ["all"],
     // 能够显示此右键菜单按钮的网站
     documentUrlPatterns: ["https://www.baidu.com/*", "https://www.apple.com.cn/*"],
-}, function () {
-});
-
-// 监听右键菜单的点击事件
-// 参数 1：被单击的“右键菜单”对象的数据
-// 参数 2：当前标签页的信息
-chrome.contextMenus.onClicked.addListener((onClickData, tab) => {
-    console.log("=================");
-    console.log("---onClickData---");
-    console.log(onClickData);
-    console.log("-------tab-------");
-    console.log(tab);
-});
+    onclick: (info, tab) => {
+        // 点击了该按钮的标签页发送消息
+        chrome.tabs.sendMessage(
+            // 点击了该按钮的标签页的 ID
+            tab.id,
+            // 发送消息，表示被点击了
+            "clicked",
+            ()=>{}
+        );
+    }
+}, ()=>{});
