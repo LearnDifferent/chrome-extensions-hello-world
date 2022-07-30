@@ -73,3 +73,11 @@ chrome.contextMenus.create({
         );
     }
 }, ()=>{});
+
+// 监听所有右键菜单的点击事件
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    // 监听 ID 为 onlyParticularId 的按钮被点击
+    if (onlyParticularId === info.menuItemId) {
+        console.log("onlyParticularId 按钮在 tab ID 为 " + tab.id + " 页面被点击");
+    }
+});
