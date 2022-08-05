@@ -81,3 +81,9 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         console.log("onlyParticularId 按钮在 tab ID 为 " + tab.id + " 页面被点击");
     }
 });
+
+chrome.contextMenus.create({
+    type: "normal",
+    title: "选中内容：%s",
+    contexts: ["selection"]
+});
